@@ -13,7 +13,7 @@ RUN apt install python3 -y
 RUN apt install python-is-python3 -y
 RUN yes | unminimize
 # Setup the admin user
-RUN useradd -rm -d /home/admin -s /bin/bash -g root -G sudo -u 1000 admin
+RUN useradd -rm -d /home/admin -s /bin/bash -g root -G sudo admin
 RUN echo 'admin:Learner2024' | chpasswd
 USER admin
 WORKDIR /home/admin
