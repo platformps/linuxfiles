@@ -3,6 +3,10 @@ import subprocess
 import re
 
 def import_linux_files():
+    # Create Docker network
+    subprocess.run(["docker", "network", "create", "ps-learner-network"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    print("Docker network 'ps-learner-network' created (if it didn't already exist).")
+
     os.makedirs("/repository", exist_ok=True)
     os.chdir("/repository")
     files = [
